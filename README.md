@@ -1,6 +1,5 @@
 # Flask Starter Project
 
-Minimal Flask scaffold for learning and GitHub portfolio.
 
 Quick start (Windows):
 
@@ -12,5 +11,14 @@ set FLASK_APP=run.py
 set FLASK_ENV=development
 flask run
 ```
+Quick start (Linux/wsl):
 
-Replace `set` with `export` on macOS/Linux.
+```python3 -m venv .venv-wsl
+source .venv-wsl/bin/activate
+
+# install deps
+pip install -r requirements.txt
+
+# run the app
+python run.py
+```
