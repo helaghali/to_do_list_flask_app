@@ -22,3 +22,12 @@ pip install -r requirements.txt
 # run the app
 python run.py
 ```
+
+Todo app quick steps (initialize DB then run):
+
+```bash
+python init_db.py
+python run.py
+```
+
+Open http://localhost:5000/tasks to view the Todo list.

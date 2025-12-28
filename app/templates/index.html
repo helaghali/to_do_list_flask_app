@@ -3,5 +3,9 @@
 {% block title %}Home - Flask Starter{% endblock %}
 
 {% block content %}
-  <p>Welcome — this is your starter Flask app. Edit `app/routes.py` to add routes.</p>
+  <section class="hero">
+    <h2>Welcome to your Todo app</h2>
+    <p>Manage tasks simply and quickly. Create, edit and remove tasks from your personal list.</p>
+    <p><a class="btn" href="{{ url_for('main.tasks') }}">View Tasks</a></p>
+  </section>
 {% endblock %}

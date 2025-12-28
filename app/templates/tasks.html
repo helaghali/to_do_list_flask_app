@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Tasks - Flask Starter{% endblock %}
+
+{% block content %}
+  <div class="tasks-header">
+    <h2>Your Tasks</h2>
+    <a class="btn" href="{{ url_for('main.add_task') }}">Add Task</a>
+  </div>
+
+  <ul class="task-list">
+    {% for t in tasks %}
+      <li class="task-item">
+        <div class="task-main">
+          <div class="task-title">{{ t.title }} {% if t.done %}<span class="badge">done</span>{% endif %}</div>
+          <div class="task-desc">{{ t.description }}</div>
+        </div>
+        <div class="task-meta">
+          <small class="muted">{{ t.created_at.strftime('%Y-%m-%d %H:%M') }}</small>
+          <div class="task-actions">
+            <a class="link" href="{{ url_for('main.edit_task', id=t.id) }}">Edit</a>
+            <form action="{{ url_for('main.delete_task', id=t.id) }}" method="post" style="display:inline">
+              <button class="link link-danger" type="submit">Delete</button>
+            </form>
+          </div>
+        </div>
+      </li>
+    {% else %}
+      <li class="empty">No tasks yet. Click "Add Task" to create your first one.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

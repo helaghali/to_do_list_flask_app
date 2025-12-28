@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ action }} Task - Flask Starter{% endblock %}
+
+{% block content %}
+  <h2>{{ action }} Task</h2>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <p>
+      {{ form.title.label }}<br>
+      {{ form.title(size=40) }}
+    </p>
+    <p>
+      {{ form.description.label }}<br>
+      {{ form.description(rows=4, cols=50) }}
+    </p>
+    <p>
+      {{ form.done() }} {{ form.done.label }}
+    </p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}
