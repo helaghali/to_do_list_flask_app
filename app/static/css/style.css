@@ -2,6 +2,10 @@ body {
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
   margin: 2rem;
   color: #222;
+  background: radial-gradient(circle at 10% 20%, rgba(255,230,240,0.45), transparent 15%),
+              radial-gradient(circle at 90% 80%, rgba(230,250,255,0.45), transparent 15%),
+              linear-gradient(135deg,#fff7fb 0%, #f7fbff 100%);
+  background-attachment: fixed;
 }
 
 header h1 {
@@ -12,6 +16,11 @@ header h1 {
   max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
+  background: rgba(255,255,255,0.75);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.08);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .site-header {
@@ -21,7 +30,9 @@ header h1 {
 }
 
 .brand {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   margin: 0;
   font-size: 1.25rem;
 }
@@ -30,6 +41,8 @@ header h1 {
   float: right;
 }
 
+.logo { width: 40px; height: auto; display: inline-block }
+
 .site-nav a {
   margin-left: 1rem;
   color: #0366d6;
@@ -37,10 +50,11 @@ header h1 {
 }
 
 .hero {
-  background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.8) 100%);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(15,23,42,0.06);
 }
 
 .btn {
@@ -57,12 +71,13 @@ header h1 {
 .tasks-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem }
 
 .task-list { list-style:none; padding:0; margin:0 }
-.task-item { display:flex; justify-content:space-between; gap:1rem; padding:0.75rem; border:1px solid #eee; border-radius:6px; margin-bottom:0.6rem }
-.task-title { font-weight:600 }
-.task-desc { color:#444; margin-top:0.4rem }
+.task-item { display:flex; justify-content:space-between; gap:1rem; padding:0.85rem; border:1px solid rgba(16,24,40,0.06); border-radius:8px; margin-bottom:0.8rem; background: rgba(255,255,255,0.9); transition: transform 120ms ease, box-shadow 120ms ease }
+.task-item:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(16,24,40,0.08) }
+.task-title { font-weight:700; color:#0f172a }
+.task-desc { color:#475569; margin-top:0.35rem }
 .task-meta { text-align:right }
-.muted { color:#666 }
+.muted { color:#64748b }
 .link { color:#0366d6; text-decoration:none; margin-left:0.5rem }
 .link-danger { color:#c92a2a }
-.badge { background:#2ea44f; color:white; padding:2px 6px; border-radius:4px; font-size:0.75rem; margin-left:0.5rem }
-.empty { color:#666; font-style:italic }
+.badge { background:#2ea44f; color:white; padding:2px 6px; border-radius:6px; font-size:0.75rem; margin-left:0.5rem }
+.empty { color:#555; font-style:italic }
